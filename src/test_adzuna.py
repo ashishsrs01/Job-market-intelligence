@@ -86,8 +86,9 @@ for job in jobs:
 
 print(count)'''
 
+# above was just learning
 
-for field in fields:
+'''for field in fields:
     present_count = 0
     missing_count = 0
 
@@ -139,10 +140,13 @@ for job in jobs:
             print(location)
 
     if category is not None:
-            print(category)
+            print(category)'''
     
 
 
     
-
-    
+for job in jobs:
+    print(job.get("salary_min"))
+    print(job.get("salary_max"))
+    print(job.get("salary_is_predicted"))
+    print("---")
