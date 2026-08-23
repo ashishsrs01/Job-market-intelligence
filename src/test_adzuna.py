@@ -85,3 +85,64 @@ for job in jobs:
         count += 1
 
 print(count)'''
+
+
+for field in fields:
+    present_count = 0
+    missing_count = 0
+
+    for job in jobs:
+        value = job.get(field)
+
+        if value is None:
+            missing_count += 1
+        else:
+            present_count += 1
+
+    percent = (present_count / len(jobs)) * 100
+
+    print(
+        field,
+        "present:", present_count,
+        "missing:", missing_count,
+        "completeness:", percent
+    )
+
+
+contract_type = []
+contract_time = []
+
+for job in jobs:
+    type_value = job.get('contract_type')
+    time_value = job.get('contract_time')
+
+    if type_value is not None:
+        contract_type.append(type_value)
+
+    if time_value is not None:
+        contract_time.append(time_value)
+
+print(f'contract_type: unique count- {len(set(contract_type))} value- {set(contract_type)}')
+print(f'contract_time: unique count- {len(set(contract_time))} value- {set(contract_time)}')
+
+
+
+for job in jobs:
+    company = job.get("company")
+    category = job.get("category")
+    location = job.get("location")
+
+    if company is not None:
+        print(company)
+
+    if location is not None:
+            print(location)
+
+    if category is not None:
+            print(category)
+    
+
+
+    
+
+    
